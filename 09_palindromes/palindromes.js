@@ -1,20 +1,7 @@
-const palindromes = function (string) {
-    let newString = "", revString = "";
-    string = string.toLowerCase();
-    for (let i = 0; i < string.length; i++) {
-        if ((string[i] >= 'a' && string[i] <= 'z') || (string[i] >= '0' && string[i] <= '9')) {
-            newString += string[i];
-        }
-    }
-    for (let i = newString.length - 1; i > -1; i--) {
-        revString += newString[i];
-    }
-    if (newString === revString) {
-        return true;
-    }
-    else {
-        return false;
-    }
+const palindromes = (string) => {
+    let newString = string.toLowerCase().split('').filter(char => (char >= 'a' && char <= 'z') || (char >= '0' && char <= '9')).join('');
+    let revString = newString.split('').reverse().join('');
+    return newString === revString;
 };
 
 // Do not edit below this line
